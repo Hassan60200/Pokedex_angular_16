@@ -17,4 +17,13 @@ export class ApiManagerService {
       })
       .catch(error => console.error('Error:', error));
   }
+
+  getDetailsPokemon(id: number){
+    return fetch(`${this.urlPokemon}/${id}`)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+      })
+      .catch(error => console.error('Error:', error));
+  }
 }
