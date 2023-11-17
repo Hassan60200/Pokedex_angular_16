@@ -19,10 +19,11 @@ export class ApiManagerService {
   }
 
   getDetailsPokemon(id: number){
-    return fetch(`${this.urlPokemon}/${id}`)
+    return fetch(`${this.urlPokemon}${id}`)
       .then(response => response.json())
       .then(data => {
-        console.log(data);
+        console.log(data)
+        return data;
       })
       .catch(error => console.error('Error:', error));
   }
