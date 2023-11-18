@@ -15,10 +15,9 @@ constructor(private api: ApiManagerService, private route: ActivatedRoute) {
 }
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.idPokemon = +params['id']; // Use '+' to convert string to number
+      this.idPokemon = +params['id'];
       this.api.getDetailsPokemon(this.idPokemon).then(data => {
         this.pokemon = data;
-        console.log(this.pokemon?.types);
       }).catch(error => console.error(error));
     });
   }

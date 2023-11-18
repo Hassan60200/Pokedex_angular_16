@@ -1,0 +1,7 @@
+<div class="d-flex justify-content-center row">
+  <div *ngFor="let pokemon of pokemons;  let i = index" class="card bg-transparent border-3 col-md-4 my-3 p-3">
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemon.id}}.png" alt="">
+    <span class="text-center">n° {{i +1}} {{ pokemon.name | titlecase }}</span>
+    <a routerLink="/pokemon/{{pokemon.id}}" class="text-center"><img src="assets/pokeball.png" style="width: 50px" alt=""></a>
+  </div>
+</div>

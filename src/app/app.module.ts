@@ -8,6 +8,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {TypesPokemonComponent} from './types-pokemon/types-pokemon.component';
 import {AppRoutingModule} from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { PokemonsListByTypesComponent } from './pokemons-list-by-types/pokemons-list-by-types.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     PokemonIndexComponent,
     PokemonShowComponent,
     HeaderComponent,
-    TypesPokemonComponent
+    TypesPokemonComponent,
+    PokemonsListByTypesComponent
   ],
   imports: [
     BrowserModule,
