@@ -1,9 +1,11 @@
 <header>
-  <div class="d-flex justify-content-center">
-    <h1 class="text-center"><a routerLink="/">Pokemon</a></h1>
+  <div class="header-container">
+    <h1 class="header-title"><a routerLink="/" class="header-link">Pokemon</a></h1>
+    <nav class="header-nav">
+      <ul class="nav-list">
+        <li><a routerLink="/" routerLinkActive="active" class="nav-item">Accueil</a></li>
+        <li><a routerLink="types" routerLinkActive="active" class="nav-item">Types</a></li>
+      </ul>
+    </nav>
   </div>
-  <nav>
-    <a routerLink="/" routerLinkActive="active">Pokemon</a>
-    <a routerLink="types" routerLinkActive="active">Types</a>
-  </nav>
 </header>
