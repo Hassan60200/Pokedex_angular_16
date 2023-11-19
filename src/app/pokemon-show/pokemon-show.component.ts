@@ -1,18 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ApiManagerService} from "../services/api-manager.service";
 import {Pokemon} from "../model/pokemon";
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
+import {FavorisManagerService} from "../services/favoris-manager.service";
 
 @Component({
   selector: 'app-pokemon-show',
   templateUrl: './pokemon-show.component.html',
   styleUrls: ['./pokemon-show.component.css']
 })
-export class PokemonShowComponent implements OnInit{
- pokemon: Pokemon | undefined;
- idPokemon?: number;
-constructor(private api: ApiManagerService, private route: ActivatedRoute) {
-}
+export class PokemonShowComponent implements OnInit {
+  pokemon: Pokemon | undefined;
+  idPokemon?: number;
+  favoris ?: boolean = false;
+
+  constructor(private api: ApiManagerService, private route: ActivatedRoute, private localStore: FavorisManagerService) {
+  }
+
+  handleFavs() {
+    this.favoris = true;
+    if (this.favoris){
+      console.log(this.pokemon);
+      console.log(this.favoris);
+      this.localStore.saveData('pokemons', this.pokemon);
+    }
+  }
+
+  deleteFavs() {
+    if (this.favoris){
+      console.log(this.localStore.getData('pokemons'))
+      this.favoris = false;
+      this.localStore.removeData('pokemons');
+    }
+  }
+
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.idPokemon = +params['id'];
@@ -20,6 +41,7 @@ constructor(private api: ApiManagerService, private route: ActivatedRoute) {
         this.pokemon = data;
       }).catch(error => console.error(error));
     });
+
   }
 
 }

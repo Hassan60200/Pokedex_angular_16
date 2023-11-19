@@ -4,6 +4,12 @@
       src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemon?.id}}.png"
       alt="{{pokemon?.name}}">
   </div>
+  <div *ngIf="favoris == false">
+    <button (click)="handleFavs()" class="btn btn-outline-success">Favoris</button>
+  </div>
+  <div *ngIf="favoris == true">
+    <button (click)="deleteFavs()" class="btn btn-outline-danger">Supprimer des Favoris</button>
+  </div>
 
   <div class="pokemon-details">
     <h2>{{pokemon?.name | uppercase}}</h2>

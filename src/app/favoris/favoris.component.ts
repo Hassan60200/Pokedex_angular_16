@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./favoris.component.css']
 })
 export class FavorisComponent  implements OnInit{
- pokemons: string[] = []
+ pokemons: string | null = localStorage.getItem('pokemons');
   ngOnInit() {
    this.pokemons
   }
