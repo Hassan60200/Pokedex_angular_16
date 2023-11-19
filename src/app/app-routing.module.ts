@@ -4,6 +4,8 @@ import {PokemonIndexComponent} from "./pokemon-index/pokemon-index.component";
 import {PokemonShowComponent} from "./pokemon-show/pokemon-show.component";
 import {TypesPokemonComponent} from "./types-pokemon/types-pokemon.component";
 import {PokemonsListByTypesComponent} from "./pokemons-list-by-types/pokemons-list-by-types.component";
+import {ContactComponent} from "./contact/contact.component";
+import {FavorisComponent} from "./favoris/favoris.component";
 
 
 const routes: Routes = [
@@ -19,6 +21,12 @@ const routes: Routes = [
   {
     path: 'types', component: TypesPokemonComponent
   },
+  {
+    path: 'contact', component: ContactComponent
+  },
+  {
+    path: 'favoris', component: FavorisComponent
+  }
 ];
 
 @NgModule({

@@ -9,6 +9,8 @@ import {TypesPokemonComponent} from './types-pokemon/types-pokemon.component';
 import {AppRoutingModule} from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonsListByTypesComponent } from './pokemons-list-by-types/pokemons-list-by-types.component';
+import { ContactComponent } from './contact/contact.component';
+import { FavorisComponent } from './favoris/favoris.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { PokemonsListByTypesComponent } from './pokemons-list-by-types/pokemons-
     PokemonShowComponent,
     HeaderComponent,
     TypesPokemonComponent,
-    PokemonsListByTypesComponent
+    PokemonsListByTypesComponent,
+    ContactComponent,
+    FavorisComponent
   ],
   imports: [
     BrowserModule,
