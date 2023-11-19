@@ -1,13 +1,12 @@
-<div *ngIf="pokemons == null">
+<div *ngIf="pokemonData == null">
     <h1 class="text-center mt-5">Aucuns pokemon en favoris</h1>
 </div>
-<div *ngIf="pokemons">
+<div *ngIf="pokemonData">
   <div class="d-flex justify-content-center row">
-   <div *ngFor="let pokemon of pokemons;  let i = index" class="card bg-transparent border-3 col-md-4 my-3 p-3">
-     {{pokemon |json}}
-    <!--  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{i +1}}.png" alt="">
-      <span class="text-center">n° {{i +1}} {{ pokemon.name | titlecase }}</span>
-      <a routerLink="/pokemon/{{i +1}}" class="text-center"><img src="assets/pokeball.png" style="width: 50px" alt=""></a>-->
+   <div class="card bg-transparent border-3 col-md-4 my-3 p-3">
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{pokemonData.id}}.png" alt="">
+      <span class="text-center">n° {{pokemonData.id}} {{ pokemonData.name | titlecase }}</span>
+      <a routerLink="/pokemon/{{ pokemonData.id }}" class="text-center"><img src="assets/pokeball.png" style="width: 50px" alt=""></a>
     </div>
   </div>
 </div>

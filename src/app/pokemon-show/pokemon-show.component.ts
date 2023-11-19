@@ -19,16 +19,17 @@ export class PokemonShowComponent implements OnInit {
 
   handleFavs() {
     this.favoris = true;
+    const pokemonData = {
+      name: this.pokemon?.name,
+      id: this.pokemon?.id
+    };
     if (this.favoris){
-      console.log(this.pokemon);
-      console.log(this.favoris);
-      this.localStore.saveData('pokemons', this.pokemon);
+      this.localStore.saveData('pokemons', JSON.stringify(pokemonData));
     }
   }
 
   deleteFavs() {
     if (this.favoris){
-      console.log(this.localStore.getData('pokemons'))
       this.favoris = false;
       this.localStore.removeData('pokemons');
     }
